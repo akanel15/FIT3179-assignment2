@@ -19,8 +19,8 @@ const emojiMapping = {
 const spec = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "title": "Infant Mortality Rate",
-    //"width": 800,
-    //"height": 400,
+    "width": 500,
+    "height": 400,
     "data": {"url": "https://raw.githubusercontent.com/akanel15/fit3179-hwtask/main/data/world-data-2023.csv"},
 
     "layer": [
