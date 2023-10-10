@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.22.1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.2.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.8"></script>
+</head>
+<body>
+  <div id="options">
+    <label for="xAxisSelect">Select X-Axis Variable:</label>
+    <select id="xAxisSelect">
+      <option value="Physicians per thousand">Physicians per thousand</option>
+      <option value="Birth Rate">Birth Rate</option>
+      <option value="CPI">CPI</option>
+      <option value="Fertility Rate">Fertility Rate</option>
+      <option value="Life expectancy">Life expectancy</option>
+    </select>
+  </div>
+
+  
+  <div id="vis"></div>
+  <div id="map"></div>
+
+  <script src="js/interactive_scatter.js"></script>
+  <script src="js/world_map_vis.js"></script>
+
+
+</body>
+</html>
