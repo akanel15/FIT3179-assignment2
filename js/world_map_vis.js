@@ -36,4 +36,4 @@ const spec2 = {
     ],
     "config": {}
 };
-  vegaEmbed("#map", spec2, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  vegaEmbed("#map", spec2, {mode: "vega-lite", "actions": false}).then(console.log).catch(console.warn);

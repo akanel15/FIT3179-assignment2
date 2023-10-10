@@ -192,12 +192,12 @@
         spec.layer[0].encoding.x.field = selectedOption; 
         spec.layer[0].encoding.x.title = selectedOption;
         spec.layer[1].encoding.x.field = selectedOption;  
-        vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+        vegaEmbed("#vis", spec, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
 
         });
 
 
-        vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+        vegaEmbed("#vis", spec, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
 
         // Path: js/interactive_scatter.js
 
@@ -242,7 +242,7 @@
     ],
     "config": {}
 };
-  vegaEmbed("#map", spec2, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  vegaEmbed("#map", spec2, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
 
 
 
