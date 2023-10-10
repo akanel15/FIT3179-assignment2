@@ -1,8 +1,7 @@
 const spec2 = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title": "Countries Tax Rate",
     //"width": 800,
-    //"height": 400,
+    "height": 400,
 
     "projection": { "type": "equirectangular" },
     "layer": [
@@ -30,7 +29,7 @@ const spec2 = {
                 "latitude": { "field": "Latitude", "type": "quantitative" },
                 "tooltip": [
                     {"field": "Country", "type": "ordinal", "title": "Country"},
-                    { "field": "Birth Rate", "type": "nominal", "title": "Tax revenue (%)"}
+                    { "field": "Physicians per thousand", "type": "nominal", "title": "Physicians per thousand"}
                 ]
             }
         }
