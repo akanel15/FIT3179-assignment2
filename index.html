@@ -187,7 +187,7 @@
                     "y": {"field": "Infant mortality", "type": "quantitative"},
                     "x": {"field": "Physicians per thousand", "type": "quantitative"}
                     },
-                    "text": {"field": "emoji", "type": "nominal"}
+                    "shape": { "field": "emoji", "type": "nominal" } // Use shape encoding to display emoji flags
                     
                 }
             ]
@@ -269,7 +269,7 @@
   "encoding": {
       "x": {
           "field": "Year",
-          "timeUnit": "Year",
+          "timeUnit": "year",
           "type": "ordinal",
           "title": "Year",
           "axis": {
