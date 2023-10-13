@@ -250,6 +250,48 @@
 };
   vegaEmbed("#map", spec2, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
 
+  spec3 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+      "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
+  },
+  "title": "Life Expectancy for each country 2010-2020",
+  "config": {
+      "view": {
+          "strokeWidth": 0,
+          "step": 13
+      },
+      "axis": {
+          "domain": false
+      }
+  },
+  "mark": "rect",
+  "encoding": {
+      "x": {
+          "field": "Year",
+          "timeUnit": "Year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+              "labelAngle": 0,
+              "format": "%e"
+          }
+      },
+      "y": {
+          "field": "Country",
+          "type": "ordinal",
+          "title": "Country"
+      },
+      "color": {
+          "field": "Life expectancy",
+          "type": "quantitative",
+          "legend": {"title": "Life Expectancy"},
+          }
+      }
+  };
+  vegaEmbed("#m2", spec, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
+
+
 </script>
         
 
