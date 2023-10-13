@@ -125,6 +125,14 @@
                     
                 <div id="vis" style="width: 90%; height: 400px; border-radius: 21px 21px 0 0;"></div>
             </div>
+
+            <div class="my-3 py-3">
+                <h2 class="display-5">Physicians</h2>
+                <p class="lead">Where are they currently working</p>
+                <div id="m2" style="width: 90%; height: 400px; border-radius: 21px 21px 0 0;"></div>
+              </div>
+
+
         </div>
 
       
@@ -246,6 +254,51 @@
     "config": {}
 };
   vegaEmbed("#map", spec2, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
+
+  const spec3 = {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 900,
+    "height": 500,
+
+    "projection": { "type": "equirectangular" },
+    "layer": [
+        {
+            "mark": { "type": "geoshape", "fill": "lightgray", "stroke": "white" }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/7_others/oceans.topojson",
+                "format": { "type": "topojson", "feature": "oceans" }
+            },
+            "mark": { "type": "geoshape", "fill": "skyblue" }
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/akanel15/fit3179-hwtask/main/data/world-data-2023.csv",
+                "format": { "type": "csv" }
+            },
+            "transform": [
+                {
+                    "filter": "datum.Country === 'Australia'"   // Corrected Filter Transform
+                }
+            ],
+            "mark": {
+                "type": "circle",
+                "color": "green"
+            },
+            "encoding": {
+                "longitude": { "field": "Longitude", "type": "quantitative" },
+                "latitude": { "field": "Latitude", "type": "quantitative" },
+                "tooltip": [
+                    {"field": "Country", "type": "ordinal", "title": "Country"},
+                    { "field": "Physicians per thousand", "type": "nominal", "title": "Physicians per thousand"}
+                ]
+            }
+        }
+    ],
+    "config": {}
+};
+  vegaEmbed("#m2", spec3, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
 
 
 
