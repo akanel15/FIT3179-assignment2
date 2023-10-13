@@ -108,7 +108,7 @@
               <p class="lead">Where are they currently working</p>
               <div id="map" style="width: 90%; height: 400px; border-radius: 21px 21px 0 0;"></div>
             </div>
-            
+
             <div class="my-3 p-3">
                 <h2 class="display-5">Infant Mortality rate</h2>
                 <p class="lead">Which countries are currently giving the best care</p>
@@ -224,6 +224,11 @@
                 "url": "https://raw.githubusercontent.com/akanel15/fit3179-hwtask/main/data/world-data-2023.csv",
                 "format": { "type": "csv" }
             },
+            "transform": [
+                {
+                    "filter": "datum.Country = Australia"   // Filter Transform
+                }
+            ],
             "mark": {
                 "type": "circle",
                 "color": "green"
