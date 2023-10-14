@@ -257,7 +257,7 @@
                     */
                     "transform": [
                       {
-                        "filter": "([datum.'Country'] == 'China' || [datum.'Country'] == 'Australia' || [datum.'Country'] == 'Russia'|| [datum.'Country']] == 'India' ||  [datum.'Country'] == 'United States')",
+                        "filter": "([datum.Country] == 'China' || [datum.Country] == 'Australia' || [datum.Country] == 'Russia'|| [datum.Country] == 'India' ||  [datum.Country] == 'United States')",
                         "calculate": "{'China': '🇨🇳', 'Australia': '🇦🇺', 'Russia': '🇷🇺', 'India': '🇮🇳', 'United States': '🇺🇸'}[datum.Country]",
                         "as": "emoji"
                       }
