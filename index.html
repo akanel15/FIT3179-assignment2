@@ -124,6 +124,7 @@
                 </div>
                     
                 <div id="vis" style="width: 90%; height: 400px; border-radius: 21px 21px 0 0;"></div>
+                <p2>Hover over the points to see the country and the values</p2>
             </div>
 
             <div class="my-3 py-3">
@@ -242,12 +243,23 @@
                 },
                 {
                     "mark": {"type": "text", "baseline": "middle"},
+                    
+                    /*
                     "transform": [
                         {
                             "filter": "datum.Country === 'United States' || datum.Country === 'Canada' || datum.Country === 'United Kingdom' || datum.Country === 'Australia' || datum.Country === 'France' || datum.Country === 'Germany' || datum.Country === 'Japan' || datum.Country === 'China' || datum.Country === 'India' || datum.Country === 'Brazil' || datum.Country === 'Russia' || datum.Country === 'South Africa'",
                             "calculate": "{'United States': '🇺🇸', 'Canada': '🇨🇦', 'United Kingdom': '🇬🇧', 'Australia': '🇦🇺', 'France': '🇫🷿, 'Germany': '🇩🇪', 'Japan': '🇯🇵', 'China': '🇨🇳', 'India': '🇮🇳', 'Brazil': '🇧🇷', 'Russia': '🇷🇺', 'South Africa': '🇿🇦'}[datum.Country]",
                             "as": "emoji"
                         }
+                    ],
+                    */
+                    "transform": [
+                      {
+                        "filter": "(datum['Country'] == 'China' || datum['Country'] == 'Australia' || datum['Country'] == 'Russia'|| datum['Country'] == 'India' ||  datum['Country'] == 'United States')",
+                        "calculate": "{'China': '🇨🇳', 'Australia': '🇦🇺', 'Russia': '🇷🇺', 'India': '🇮🇳', 'United States': '🇺🇸'}[datum.Country]",
+                        "as": "emoji"
+                      }
+
                     ],
                     "encoding": {
                         "y": {"field": "Infant mortality", "type": "quantitative"},
