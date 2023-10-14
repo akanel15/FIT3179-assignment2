@@ -245,16 +245,7 @@
                 },
                 {
                     "mark": {"type": "text", "baseline": "middle"},
-                    
-                    /*
-                    "transform": [
-                        {
-                            "filter": "datum.Country === 'United States' || datum.Country === 'Canada' || datum.Country === 'United Kingdom' || datum.Country === 'Australia' || datum.Country === 'France' || datum.Country === 'Germany' || datum.Country === 'Japan' || datum.Country === 'China' || datum.Country === 'India' || datum.Country === 'Brazil' || datum.Country === 'Russia' || datum.Country === 'South Africa'",
-                            "calculate": "{'United States': '🇺🇸', 'Canada': '🇨🇦', 'United Kingdom': '🇬🇧', 'Australia': '🇦🇺', 'France': '🇫🷿, 'Germany': '🇩🇪', 'Japan': '🇯🇵', 'China': '🇨🇳', 'India': '🇮🇳', 'Brazil': '🇧🇷', 'Russia': '🇷🇺', 'South Africa': '🇿🇦'}[datum.Country]",
-                            "as": "emoji"
-                        }
-                    ],
-                    */
+
                     "transform": [
                     {
                       "calculate": "{'United States': '🇺🇸'}[datum.Country]",
@@ -270,6 +261,18 @@
                 }
             ]
         };
+
+        
+
+                            /*
+                    "transform": [
+                        {
+                            "filter": "datum.Country === 'United States' || datum.Country === 'Canada' || datum.Country === 'United Kingdom' || datum.Country === 'Australia' || datum.Country === 'France' || datum.Country === 'Germany' || datum.Country === 'Japan' || datum.Country === 'China' || datum.Country === 'India' || datum.Country === 'Brazil' || datum.Country === 'Russia' || datum.Country === 'South Africa'",
+                            "calculate": "{'United States': '🇺🇸', 'Canada': '🇨🇦', 'United Kingdom': '🇬🇧', 'Australia': '🇦🇺', 'France': '🇫🷿, 'Germany': '🇩🇪', 'Japan': '🇯🇵', 'China': '🇨🇳', 'India': '🇮🇳', 'Brazil': '🇧🇷', 'Russia': '🇷🇺', 'South Africa': '🇿🇦'}[datum.Country]",
+                            "as": "emoji"
+                        }
+                    ],
+                    */
 
         xAxisSelect.addEventListener("change", () => {
           const selectedOption = xAxisSelect.value;
