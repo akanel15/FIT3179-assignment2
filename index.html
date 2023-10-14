@@ -256,13 +256,10 @@
                     ],
                     */
                     "transform": [
-                      {
-                        "filter": "([datum.Country] == 'China' || [datum.Country] == 'Australia' || [datum.Country] == 'Russia'|| [datum.Country] == 'India' ||  [datum.Country] == 'United States')",
-                        "calculate": "{'China': '🇨🇳', 'Australia': '🇦🇺', 'Russia': '🇷🇺', 'India': '🇮🇳', 'United States': '🇺🇸'}[datum.Country]",
-                        "as": "emoji"
-                      }
-
-                    ],
+                    {
+                      "calculate": "{'United States': '🇺🇸'}[datum.Country]",
+                      "as": "emoji"
+                    }],
                     "encoding": {
                         "y": {"field": "Infant mortality", "type": "quantitative"},
                         "x": {"field": "Physicians per thousand", "type": "quantitative"}
