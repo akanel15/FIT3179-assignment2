@@ -315,12 +315,17 @@
                 "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/world-data-2023.csv",
                 "format": { "type": "csv" }
             },
+            "transform": [
+              {
+                  "calculate": "toNumber(replace(datum.Population, ',', ''))", // Remove commas and convert to a number
+                  "as": "Population"
+              }
+          ],
             "mark": "circle",
             "encoding": {
                 "longitude": { "field": "Longitude", "type": "quantitative" },
                 "latitude": { "field": "Latitude", "type": "quantitative" },
                 "size": {"field": "Population","type": "quantitative",
-
                         "title": "Population",
                         "legend": {"labelFontSize": 12, "titleFontSize": 14}
                       },
@@ -424,12 +429,13 @@ for (let i = 0; i < 8; i++) {
                 "field": "Life expectancy ",
                 "type": "quantitative",
                 "legend": {"title": "Life Expectancy"}
-            }
-          },            
-          "filter": {
+            },
+            "filter": {
                 "field": "Country",
                 "equal": country
           }
+
+          }        
       };
     
     const divId = `d${i + 1}`;
