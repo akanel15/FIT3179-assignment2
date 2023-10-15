@@ -620,7 +620,12 @@ for (let i = 0; i < 6; i++) {
                         "legend": { "title": "Life Expectancy" },
                         "scale": { "domain": [40, 90] }
                     },
-                    "color": { "value": "blue" }
+                    "color": { "value": "blue" },
+                    "tooltip": [
+                        { "field": "Life expectancy", "type": "quantitative", "title": "Life Expectancy" },
+                        { "field": "Year", "type": "temporal", "title": "Year", "format": "%Y" },
+                        { "field": "Alcohol", "type": "quantitative", "title": "Alcohol Consumption" }
+                    ]
                 }
             },
             {
