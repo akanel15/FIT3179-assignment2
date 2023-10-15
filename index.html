@@ -316,7 +316,7 @@
             },
             "transform": [
               {
-                  "calculate": "toNumber(replaceAlla(datum.Population, ',', ''))", // Remove commas and convert to a number
+                  "calculate": "toNumber(replaceAll(datum.Population, ',', ''))", // Remove commas and convert to a number
                   "as": "Population"
               }
           ],
