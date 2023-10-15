@@ -527,15 +527,11 @@
       "as": "dev"
     }
   ],
-  "title": "Life Expectancy for Selected Developed Countries (2010-2020)",
+  "title": "Life Expectancy for Selected Developed Countries (2000-2014)",
   "config": {
     "view": {
       "strokeWidth": 0,
       "step": 13
-    },
-    "axis": {
-      "domain": false,
-      "scale": { domain: [40, 90] } // Set a constant scale
     }
   },
   "mark": "rect",
@@ -558,7 +554,8 @@
     "color": {
       "field": "Life expectancy",
       "type": "quantitative",
-      "legend": { "title": "Life Expectancy" }
+      "legend": { "title": "Life Expectancy" },
+      "scale": { domain: [40, 90], range: ["red", "green"] }
     },
     "tooltip": [
       { "field": "Country", "type": "nominal", "title": "Country" },
@@ -589,10 +586,6 @@ const spec4 = {
       "strokeWidth": 0,
       "step": 13
     },
-    "axis": {
-      "domain": false,
-      "scale": { domain: [40, 90] } // Set a constant scale
-    }
   },
   "mark": "rect",
   "encoding": {
@@ -614,7 +607,9 @@ const spec4 = {
     "color": {
       "field": "Life expectancy",
       "type": "quantitative",
-      "legend": { "title": "Life Expectancy" }
+      "legend": { "title": "Life Expectancy" },
+      "scale": { domain: [40, 90], range: ["red", "green"] }
+
     },
     "tooltip": [
       { "field": "Country", "type": "nominal", "title": "Country" },
