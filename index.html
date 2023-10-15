@@ -406,8 +406,24 @@
           const selectedOption = xAxisSelect.value;
           spec.layer[0].encoding.x.field = selectedOption;
           spec.layer[0].encoding.x.title = selectedOption;
-          spec.layer[1].encoding.x.field = selectedOption;
           spec.layer[0].encoding.tooltip[2].field = selectedOption;
+          spec.layer[0].encoding.tooltip[2].title = selectedOption;
+
+          spec.layer[1].encoding.x.field = selectedOption;
+          spec.layer[1].encoding.x.title = selectedOption;
+          spec.layer[1].encoding.tooltip[2].field = selectedOption;
+          spec.layer[1].encoding.tooltip[2].title = selectedOption;
+
+          spec.layer[2].encoding.x.field = selectedOption;
+          spec.layer[2].encoding.x.title = selectedOption;
+          spec.layer[2].encoding.tooltip[2].field = selectedOption;
+          spec.layer[2].encoding.tooltip[2].title = selectedOption;
+
+          spec.layer[3].encoding.x.field = selectedOption;
+          spec.layer[3].encoding.x.title = selectedOption;
+          spec.layer[3].encoding.tooltip[2].field = selectedOption;
+          spec.layer[3].encoding.tooltip[2].title = selectedOption;
+
           vegaEmbed("#vis", spec, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
         });
 
