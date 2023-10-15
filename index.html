@@ -531,7 +531,8 @@
       "step": 13
     },
     "axis": {
-      "domain": false
+      "domain": false,
+      "scale": { domain: [40, 90] } // Set a constant scale
     }
   },
   "mark": "rect",
@@ -555,7 +556,12 @@
       "field": "Life expectancy",
       "type": "quantitative",
       "legend": { "title": "Life Expectancy" }
-    }
+    },
+    "tooltip": [
+      { "field": "Country", "type": "nominal", "title": "Country" },
+      { "field": "Year", "type": "temporal", "title": "Year", "format": "%Y" },
+      { "field": "Life expectancy", "type": "quantitative", "title": "Life Expectancy" }
+    ]
   }
 };
 
@@ -581,7 +587,8 @@ const spec4 = {
       "step": 13
     },
     "axis": {
-      "domain": false
+      "domain": false,
+      "scale": { domain: [40, 90] } // Set a constant scale
     }
   },
   "mark": "rect",
@@ -605,12 +612,16 @@ const spec4 = {
       "field": "Life expectancy",
       "type": "quantitative",
       "legend": { "title": "Life Expectancy" }
-    }
+    },
+    "tooltip": [
+      { "field": "Country", "type": "nominal", "title": "Country" },
+      { "field": "Year", "type": "temporal", "title": "Year", "format": "%Y" },
+      { "field": "Life expectancy", "type": "quantitative", "title": "Life Expectancy" }
+    ]
   }
 };
 
 vegaEmbed("#m3", spec4, { mode: "vega-lite", actions: false }).then(console.log).catch(console.warn);
-
 
 
 
