@@ -296,7 +296,8 @@
                   "transform": [
                     {
                       "filter": "datum.Country === 'United States'",
-                      "calculate": "'🇺🇸' as usa"
+                      "calculate": "{'United States': '🇺🇸'}[datum.Country]",
+                      "as": "usa"
                     }
                   ],
                   "encoding": {
