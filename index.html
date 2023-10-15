@@ -255,7 +255,7 @@
                     }],
                     "encoding": {
                         "y": {"field": "Infant mortality", "type": "quantitative"},
-                        "x": {"field": "Physicians per thousand", "type": "quantitative"}
+                        "x": {"field": "Physicians per thousand", "type": "quantitative"},
                     },
                     "text": { "field": "emoji", "type": "nominal" },
                     "size": {"value": 65}
@@ -315,11 +315,11 @@
                 "format": { "type": "csv" }
             },
             "transform": [
-              {
-                  "calculate": "toNumber(datum.Population.replaceAll(',', ''))", // Remove commas and convert to a number
+                {
+                  "calculate": "toNumber(replace(replace(datum.Population, ',', ''), ',', ''))",
                   "as": "Population"
-              }
-          ],
+                }
+            ],
             "mark": "circle",
             "encoding": {
                 "longitude": { "field": "Longitude", "type": "quantitative" },
