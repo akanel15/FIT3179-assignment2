@@ -326,12 +326,17 @@
                 "latitude": { "field": "Latitude", "type": "quantitative" },
                 "size": {"field": "Population","type": "quantitative",
                         "title": "Population",
-                        "legend": {"labelFontSize": 12, "titleFontSize": 14}
+                        "legend": {"labelFontSize": 12, "titleFontSize": 14},
+                        "scale": {
+                          "type": "linear", // Use a linear scale
+                          "domain": [0, 2000000000], // Adjust the domain according to your data
+                          "range": [50, 200] // Adjust the range to control dot size
+                        }
                       },
                 "color": {
                         "field": "Infant mortality",
                         "type": "quantitative",
-                        "scale": {"scheme": "blues"},
+                        "scale": {"scheme": "reds"},
                         "legend": {"direction": "horizontal", "labelFontSize": 12, "titleFontSize": 14},
                         "title": "Infant Mortality (death per 1000 live births)"
                     },
