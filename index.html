@@ -194,34 +194,30 @@
               
               
               <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
-                <h2 class="display-5">The Effect of Alcohol on life expectancy</h2>
+                <h2 class="display-5">The Effect of Alcohol on Life Expectancy</h2>
               </div>
 
               <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 py-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d2" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
 
                   </div>
                 </div>
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 p-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d3" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
 
                   </div>
                 </div>
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 p-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d4" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
 
                   </div>
                 </div>
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 p-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d5" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
 
                   </div>
@@ -230,21 +226,18 @@
               <div class="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 py-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d6" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
 
                   </div>
                 </div>
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 p-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d7" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
 
                   </div>
                 </div>
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 p-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d8" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
 
                   </div>
@@ -252,7 +245,6 @@
 
                 <div class="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
                   <div class="my-3 p-3">
-                    <p class="lead">And an even wittier subheading.</p>
                     <div id="d1" style="height: 200px; border-radius: 21px 21px 0 0;"></div>
                   </div>
                 </div>
@@ -261,21 +253,6 @@
       
         <script>
             const xAxisSelect = document.getElementById("xAxisSelect");
-
-        const emojiMapping = {
-            'United States': '🇺🇸',
-            'Canada': '🇨🇦',
-            'United Kingdom': '🇬🇧',
-            'Australia': '🇦🇺',
-            'France': '🇫🇷',
-            'Germany': '🇩🇪',
-            'Japan': '🇯🇵',
-            'China': '🇨🇳',
-            'India': '🇮🇳',
-            'Brazil': '🇧🇷',
-            'Russia': '🇷🇺',
-            'South Africa': '🇿🇦'
-        };
 
         const spec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -401,17 +378,7 @@
             }
         };
 
-        
-
-                            /*
-                    "transform": [
-                        {
-                            "filter": "datum.Country === 'United States' || datum.Country === 'Canada' || datum.Country === 'United Kingdom' || datum.Country === 'Australia' || datum.Country === 'France' || datum.Country === 'Germany' || datum.Country === 'Japan' || datum.Country === 'China' || datum.Country === 'India' || datum.Country === 'Brazil' || datum.Country === 'Russia' || datum.Country === 'South Africa'",
-                            "calculate": "{'United States': '🇺🇸', 'Canada': '🇨🇦', 'United Kingdom': '🇬🇧', 'Australia': '🇦🇺', 'France': '🇫🷿, 'Germany': '🇩🇪', 'Japan': '🇯🇵', 'China': '🇨🇳', 'India': '🇮🇳', 'Brazil': '🇧🇷', 'Russia': '🇷🇺', 'South Africa': '🇿🇦'}[datum.Country]",
-                            "as": "emoji"
-                        }
-                    ],
-                    */
+      
 
         xAxisSelect.addEventListener("change", () => {
           const selectedOption = xAxisSelect.value;
@@ -605,7 +572,7 @@ vegaEmbed("#m3", spec4, { mode: "vega-lite", actions: false }).then(console.log)
 
 
 
-const countries = ["Australia", "France", "Germany", "China", "India", "Brazil", "South Africa", "Uruguay"];
+const countries = ["Uruguay", "Australia", "France", "Germany", "China", "India", "Brazil", "South Africa"];
 
 for (let i = 0; i < 8; i++) {
     const country = countries[i];
