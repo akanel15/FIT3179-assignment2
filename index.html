@@ -256,8 +256,8 @@
 
         const spec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "width": 500,
-            "height": 400,
+            "width": "container",
+            "height": "container",
             "data": {
                 "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/world-data-2023.csv"
             },
@@ -414,8 +414,8 @@
 
         const spec2 = {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width": 900,
-    "height": 500,
+    "width": "container",
+    "height": "container",
 
     "projection": { "type": "equirectangular" },
     "layer": [
@@ -477,6 +477,8 @@
 
   const spec3 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+"height": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
   },
@@ -524,6 +526,8 @@ vegaEmbed("#m2", spec3, { mode: "vega-lite", actions: false }).then(console.log)
 
 const spec4 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": "container",
   "data": {
     "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
   },
@@ -579,6 +583,8 @@ for (let i = 0; i < 8; i++) {
 
     const spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "width": "container",
+        "height": "container",
         "data": {
             "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
         },
