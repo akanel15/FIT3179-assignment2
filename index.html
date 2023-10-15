@@ -289,32 +289,31 @@
                     }
                 },
                 {
-                    "mark": {
-                      "type": "point", 
-                      "filled": true,
-                      "color": "green",
-                      "size": 100
-                    },
-
-                    "transform": [
+                  "mark": {
+                    "type": "text",
+                    "size": 20
+                  },
+                  "transform": [
                     {
                       "filter": "datum.Country === 'United States'",
                       "calculate": "{'United States': '🇺🇸'}[datum.Country]",
                       "as": "usa"
-                    }],
-                    "encoding": {
-                        "y": {"field": "Infant mortality", "type": "quantitative"},
-                        "x": {"field": "Physicians per thousand", "type": "quantitative"},
-                        "tooltip": [
-                            {"field": "Country", "type": "ordinal", "title": "Country"},
-                            {"field": "Infant mortality", "type": "quantitative", "title": "Infant mortality"},
-                            {"field": "Physicians per thousand", "type": "quantitative", "title": "Physicians per thousand"},
-                            {"field": "usa", "type": "nominal", "title": "usa"}
-                        ] 
                     }
+                  ],
+                  "encoding": {
+                    "y": { "field": "Infant mortality", "type": "quantitative" },
+                    "x": { "field": "Physicians per thousand", "type": "quantitative" },
+                    "text": { "field": "usa", "type": "nominal" },
+                    "tooltip": [
+                      { "field": "Country", "type": "ordinal", "title": "Country" },
+                      { "field": "Infant mortality", "type": "quantitative", "title": "Infant mortality" },
+                      { "field": "Physicians per thousand", "type": "quantitative", "title": "Physicians per thousand" },
+                      { "field": "usa", "type": "nominal", "title": "USA" }
+                    ]
+                  }
                 }
-            ]
-        };
+              ]
+            };
 
         
 
