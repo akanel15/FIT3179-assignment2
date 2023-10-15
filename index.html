@@ -615,7 +615,12 @@ for (let i = 0; i < 8; i++) {
         "data": {
             "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
         },
-        "title": `Life Expectancy for ${country} 2010-2020`,
+        "transform": [
+            {
+                "filter": { "field": "Country", "equal": country }
+            }
+        ],
+        "title": `Life Expectancy for ${country} 2000-2014`,
         "config": {
             "view": {
                 "strokeWidth": 0,
@@ -642,10 +647,6 @@ for (let i = 0; i < 8; i++) {
                 "type": "quantitative",
                 "legend": {"title": "Life Expectancy"}
             },
-            "filter": {
-                "field": "Country",
-                "equal": country
-          }
 
           }        
       };
