@@ -513,12 +513,17 @@
 
 
 
-
   spec3 = {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "data": {
       "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
   },
+  "transform": [
+                {
+                  "filter": "datum.Counrty === 'Spain' || datum.Country === 'Uruguay' || datum.Country === 'Australia' || datum.Country === 'Italy' || datum.Country === 'Turkey' || datum.Country === 'Germany' || datum.Country === 'Belgium' || datum.Country === 'France'",
+                  "as": "dev"
+                }
+            ],
   "title": "Life Expectancy for each country 2010-2020",
   "config": {
       "view": {
@@ -542,9 +547,9 @@
           }
       },
       "y": {
-          "field": "Country",
+          "field": "dev",
           "type": "ordinal",
-          "title": "Country"
+          "title": "Developed Counties"
       },
       "color": {
           "field": "Life expectancy ",
@@ -554,6 +559,58 @@
       }
   };
   vegaEmbed("#m2", spec3, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
+
+
+spec4 = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+      "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
+  },
+  "transform": [
+                {
+                  "filter": "datum.Country === 'Botswana' || datum.Country === 'Kenya' || datum.Country === 'Brazil' || datum.Country === 'Nigeria' || datum.Country === 'South Africa' || datum.Country === 'Zimbabwe' || datum.Country === 'Samoa' || datum.Country === 'Costa Rica'",
+                  "as": "dev2"
+                }
+            ],
+  "title": "Life Expectancy for each country 2010-2020",
+  "config": {
+      "view": {
+          "strokeWidth": 0,
+          "step": 13
+      },
+      "axis": {
+          "domain": false
+      }
+  },
+  "mark": "rect",
+  "encoding": {
+      "x": {
+          "field": "Year",
+          "timeUnit": "year",
+          "type": "ordinal",
+          "title": "Year",
+          "axis": {
+              "labelAngle": 0,
+              "format": "%e"
+          }
+      },
+      "y": {
+          "field": "dev2",
+          "type": "ordinal",
+          "title": "Developed Countries"
+      },
+      "color": {
+          "field": "Life expectancy ",
+          "type": "quantitative",
+          "legend": {"title": "Life Expectancy"},
+          }
+      }
+  };
+  vegaEmbed("#m3", spec4, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
+
+
+
+
 
 
   const countries = ["United States", "Canada", "United Kingdom", "Australia", "France", "Germany", "Japan", "China"];
