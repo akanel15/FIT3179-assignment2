@@ -605,22 +605,17 @@ vegaEmbed("#m3", spec4, { mode: "vega-lite", actions: false }).then(console.log)
 
 
 
-  const countries = ["France", "Germany", "China", "India", "Brazil", "South Africa", "Belgium", "Australia"];
+const countries = ["Australia", "France", "Germany", "China", "India", "Brazil", "South Africa", "Uruguay"];
 
 for (let i = 0; i < 8; i++) {
     const country = countries[i];
-    
+
     const spec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "data": {
             "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/Life_Expectancy_Data.csv"
         },
-        "transform": [
-            {
-                "filter": { "field": "Country", "equal": country }
-            }
-        ],
-        "title": `Life Expectancy for ${country} 2000-2014`,
+        "title": `${country} - Life Expectancy and Alcohol Consumption (2010-2020)`,
         "config": {
             "view": {
                 "strokeWidth": 0,
@@ -630,31 +625,65 @@ for (let i = 0; i < 8; i++) {
                 "domain": false
             }
         },
-        "mark": "line",
-        "encoding": {
-            "x": {
-                "field": "Year",
-                "timeUnit": "year",
-                "type": "ordinal",
-                "title": "Year",
-                "axis": {
-                    "labelAngle": 0,
-                    "format": "%e"
+        "transform": [
+            {
+                "filter": { "field": "Country", "equal": country }
+            }
+        ],
+        "layer": [
+            {
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "timeUnit": "year",
+                        "type": "temporal",
+                        "title": "Year",
+                        "axis": {
+                            "labelAngle": 0,
+                            "format": "%e"
+                        }
+                    },
+                    "y": {
+                        "field": "Life expectancy",
+                        "type": "quantitative",
+                        "legend": { "title": "Life Expectancy" },
+                        "scale": { "domain": [40, 90] }
+                    },
+                    "color": { "value": "blue" }
                 }
             },
-            "y": {
-                "field": "Life expectancy",
-                "type": "quantitative",
-                "legend": {"title": "Life Expectancy"}
-            },
+            {
+                "mark": "line",
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "timeUnit": "year",
+                        "type": "temporal",
+                        "title": "Year",
+                        "axis": {
+                            "labelAngle": 0,
+                            "format": "%e"
+                        }
+                    },
+                    "y": {
+                        "field": "Alcohol",
+                        "type": "quantitative",
+                        "legend": { "title": "Alcohol Consumption" },
+                        "scale": { "domain": [0, 20] }
+                    },
+                    "color": { "value": "red" }
+                }
+            }
+        ],
+        "resolve": { "scale": { "y": "independent" } }
+    };
 
-          }        
-      };
-    
     const divId = `d${i + 1}`;
-    
-    vegaEmbed(`#${divId}`, spec, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
+
+    vegaEmbed(`#${divId}`, spec, { mode: "vega-lite", actions: false }).then(console.log).catch(console.warn);
 }
+
 
 
 
