@@ -316,7 +316,7 @@
             },
             "transform": [
               {
-                  "calculate": "toNumber(replace(datum.Population, ',', ''))", // Remove commas and convert to a number
+                  "calculate": "toNumber(datum.Population.replace(/,/g, ''))",
                   "as": "Population"
               }
           ],
@@ -326,7 +326,6 @@
                 "latitude": { "field": "Latitude", "type": "quantitative" },
                 "size": {"field": "Population","type": "quantitative",
                         "title": "Population",
-                        "scale": { "nice": true }, 
                         "legend": {"labelFontSize": 12, "titleFontSize": 14}
                       },
                 "color": {
