@@ -427,6 +427,10 @@
           spec.layer[3].encoding.tooltip[2].field = selectedOption;
           spec.layer[3].encoding.tooltip[2].title = selectedOption;
 
+          spec.layer[4].encoding.x.field = selectedOption;
+          spec.layer[4].encoding.tooltip[2].field = selectedOption;
+          spec.layer[4].encoding.tooltip[2].title = selectedOption;
+
           vegaEmbed("#vis", spec, {mode: "vega-lite", actions: false}).then(console.log).catch(console.warn);
         });
 
