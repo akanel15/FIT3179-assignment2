@@ -1,0 +1,40 @@
+{
+  "data": {
+    "url": "https://raw.githubusercontent.com/bedw0004/FIT3179/main/datavis2/data/share_elec_low_carbon.csv"
+  },
+  "transform": [
+      {"filter": "datum.Year == Year_select"},
+      {
+          "lookup": "Code",
+          "from": {
+              "data": {
+              "url": "https://raw.githubusercontent.com/akanel15/FIT3179-assignment2/main/data/ne_110m.topojson",
+              "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+              },
+              "key": "properties.ISO_A3_EH"
+          },
+          "as": "countries"
+      },
+      {
+        "calculate": "datum.low_carbon_perc/100",
+        "as": "low_carbon_prop"
+      }
+  ],
+  "mark": {
+    "type": "geoshape", 
+    "stroke": "black", 
+    "strokeWidth": 0.4, 
+    "strokeOpacity": 0.5
+  },
+  "encoding": {
+      "shape": {
+        "field": "countries",
+        "type": "geojson"
+      },
+      "color": {
+          "field": "Infant mortality",
+          "type": "quantitative",
+          "scale": {"scheme": "reds"},
+          "legend": {"direction": "horizontal", "labelFontSize": 12, "titleFontSize": 14},
+          "title": "Infant Mortality (death per 1000 live births)"
+      }
